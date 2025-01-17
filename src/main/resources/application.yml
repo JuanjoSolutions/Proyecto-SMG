@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:feedback2db
+    url: jdbc:h2:mem:feedback2db;DB_CLOSE_DELAY=-1
     driverClassName: org.h2.Driver
     username: sa
     password:
@@ -10,6 +10,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    defer-datasource-initialization: true
   batch:
     job:
       enabled: true
@@ -17,3 +18,8 @@ spring:
 # Configuración de H2 Console
 spring.h2.console.enabled: true
 spring.h2.console.path: /h2-console
+
+# (Opcional) Cambiar el puerto si es necesario
+# server:
+#   port: 8080
+
